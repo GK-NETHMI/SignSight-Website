@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SignSight — Dynamic Sign Language Recognition Using Computer Vision. An academic research project by Jeran Mark at SLIIT." />
+  <meta name="author" content="Jeran Mark (Mark J J)" />
+  <title>SignSight | Dynamic Sign Language Recognition</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-hand-index-thumb"></i></span>
+        <span class="brand-text">SignSight<small>Research Project</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="domain.html">Domain</a></li>
+          <li class="nav-item"><a class="nav-link" href="milestones.html">Milestones</a></li>
+          <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+          <li class="nav-item"><a class="nav-link" href="presentations.html">Presentations</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gradient btn-sm" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 hero-content">
+          <span class="hero-badge"><span class="pulse"></span> Final-Year Research · SLIIT · 25-26J-404</span>
+          <h1>Dynamic <span class="accent">Sign Language</span> Recognition Using Computer Vision</h1>
+          <p class="lead">A real-time, deep-learning pipeline that converts hand gestures into meaningful text using MediaPipe Holistic landmarks and Bidirectional LSTM / GRU networks — designed to make Tamil Sign Language accessible on everyday consumer devices.</p>
+          <div class="d-flex flex-wrap gap-3">
+            <a class="btn btn-gradient" href="domain.html">View Project <i class="bi bi-arrow-right ms-2"></i></a>
+            <a class="btn btn-outline-light-custom" href="contact.html"><i class="bi bi-envelope me-2"></i>Contact Team</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong><span data-count="93.46" data-suffix="%">0%</span></strong><span>Bi-GRU Test Accuracy</span></div>
+            <div class="stat"><strong><span data-count="15">0</span></strong><span>Gloss Classes</span></div>
+            <div class="stat"><strong><span data-count="1662">0</span></strong><span>Landmark Features</span></div>
+          </div>
+        </div>
+        <div class="col-lg-5 hero-visual">
+          <div class="hero-card">
+            <div class="card-head">
+              <span class="text-white-50 small text-uppercase" style="letter-spacing:0.1em">Live Recognition</span>
+              <span class="badge rounded-pill" style="background:rgba(16,255,176,0.2); color:#10ffb0;">● ONLINE</span>
+            </div>
+            <div class="gesture-box"></div>
+            <div class="prediction-bar">
+              <span><i class="bi bi-soundwave me-2"></i>Predicted Gloss</span>
+              <span>HELLO · 94.2%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section id="overview" class="bg-soft">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <span class="section-tag">Project Overview</span>
+          <h2 class="section-title">Bridging communication for the Deaf and hard-of-hearing community</h2>
+          <p>SignSight is a research initiative at the Sri Lanka Institute of Information Technology that applies computer vision and deep recurrent networks to translate dynamic hand gestures into readable text in real time. The system is built around MediaPipe Holistic landmarks, StandardScaler and PCA preprocessing, and stacked Bi-LSTM / Bi-GRU temporal classifiers.</p>
+          <p>By relying only on a consumer-grade webcam and open-source tools — OpenCV, TensorFlow, MediaPipe, scikit-learn — the pipeline stays lightweight, reproducible, and honest about its limits, making it accessible for schools, NGOs, and community settings across Sri Lanka.</p>
+          <a class="btn btn-outline-primary-custom mt-2" href="domain.html">Read the Research <i class="bi bi-book ms-2"></i></a>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="highlight-card">
+                <h2><span data-count="92.16" data-suffix="%">0</span></h2>
+                <p>Bi-LSTM Test Accuracy</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="highlight-card alt">
+                <h2><span data-count="1020">0</span></h2>
+                <p>Training Sequences</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="highlight-card dark">
+                <h2><span data-count="45">0</span></h2>
+                <p>Frame Window (Bi-LSTM)</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="highlight-card">
+                <h2><span data-count="256">0</span></h2>
+                <p>PCA Components</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">Key Features</span>
+        <h2 class="section-title">What the system does</h2>
+        <p class="section-subtitle">A complete, end-to-end recognition stack — from raw webcam frames to predicted glosses — with preprocessing, training, and inference aligned across the pipeline.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-camera-video"></i></div>
+            <h4>Real-Time Capture</h4>
+            <p>Uses ordinary webcams with MediaPipe Holistic to extract 33 pose, 468 face, and 42 hand landmarks per frame — no depth sensors, no gloves.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+            <h4>Dynamic Sequence Model</h4>
+            <p>A 3-layer bidirectional LSTM (64-128-64) with recurrent dropout captures temporal structure across a 45-frame window.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
+            <h4>Lightweight Bi-GRU Baseline</h4>
+            <p>A parallel Bi-GRU model with fewer parameters and a 32-frame buffer, offering a lighter deployment option for low-power devices.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+            <h4>Train-Serve Consistency</h4>
+            <p>Scaler, PCA, and sequence length rules are serialized and shared between training notebooks and the live inference pipeline.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h4>Confidence Scoring</h4>
+            <p>Each prediction is returned with a 0–100 Recognition Confidence Score and optional SHAP-style feature attribution.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-universal-access"></i></div>
+            <h4>Accessibility-First UI</h4>
+            <p>A cross-platform web/mobile client with large icons, high-contrast visuals, and intuitive feedback tailored for hearing-impaired users.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="bg-soft">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">Technology Stack</span>
+        <h2 class="section-title">Built with open, reproducible tools</h2>
+        <p class="section-subtitle">The entire pipeline runs on a single consumer laptop, using libraries that students and small labs can install in minutes.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <div class="tech-chip"><i class="bi bi-filetype-py"></i><span>Python</span><small>Core language</small></div>
+        <div class="tech-chip"><i class="bi bi-cpu"></i><span>TensorFlow</span><small>Keras Bi-LSTM / Bi-GRU</small></div>
+        <div class="tech-chip"><i class="bi bi-camera-reels"></i><span>OpenCV</span><small>Video I/O</small></div>
+        <div class="tech-chip"><i class="bi bi-palette"></i><span>MediaPipe</span><small>Holistic landmarks</small></div>
+        <div class="tech-chip"><i class="bi bi-braces"></i><span>scikit-learn</span><small>Scaler + PCA</small></div>
+        <div class="tech-chip"><i class="bi bi-diagram-2"></i><span>LSTM</span><small>Primary classifier</small></div>
+        <div class="tech-chip"><i class="bi bi-hdd-network"></i><span>GRU</span><small>Lightweight baseline</small></div>
+        <div class="tech-chip"><i class="bi bi-code-slash"></i><span>HTML / CSS / JS</span><small>Web client</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Highlights -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">Research Highlights</span>
+        <h2 class="section-title">What makes this work stand out</h2>
+        <p class="section-subtitle">A focused, honest, deployment-oriented contribution to low-resource sign language recognition.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-check2-circle"></i></div>
+            <h4>15-Class Tamil Sign Language Corpus</h4>
+            <p>68 clips per gloss across everyday greetings, colours, and actions — 1,020 sequences in total, collected with consumer webcams.</p>
+          </div>
+        </div>
+        <div class="col-md-6 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-bar-chart"></i></div>
+            <h4>Side-by-Side Architecture Comparison</h4>
+            <p>Bi-LSTM (45-frame, 92.16%) vs Bi-GRU (32-frame, 93.46%) under identical preprocessing — documented in IEEE format.</p>
+          </div>
+        </div>
+        <div class="col-md-6 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-boxes"></i></div>
+            <h4>Modular SignSight Integration</h4>
+            <p>Clear interface contracts for sibling modules: audio-to-sign, TSL learning platform, and emotion-aware child support.</p>
+          </div>
+        </div>
+        <div class="col-md-6 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-people"></i></div>
+            <h4>Community-Facing Design</h4>
+            <p>Low hardware cost, transparent limitations, and a roadmap for signer-independent evaluation with Deaf-led organisations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-soft">
+    <div class="container">
+      <div class="highlight-card alt text-center py-5 reveal">
+        <h2 class="text-white mb-3">Interested in this research?</h2>
+        <p class="mb-4 text-white-50">Get in touch to request source code, explore collaboration, or discuss deployment in your organisation.</p>
+        <a class="btn btn-outline-light-custom" href="contact.html"><i class="bi bi-chat-dots me-2"></i>Contact the Researcher</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand">
+            <span class="brand-icon"><i class="bi bi-hand-index-thumb text-white"></i></span>
+            SignSight
+          </span>
+          <p class="mt-2">Dynamic Sign Language Recognition Using Computer Vision. A final-year research project at SLIIT focused on accessible communication for the hearing-impaired community.</p>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="bi bi-github text-white"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin text-white"></i></a>
+            <a href="mailto:mrjeranmark0908@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill text-white"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="domain.html">Domain</a></li>
+            <li><a href="milestones.html">Milestones</a></li>
+            <li><a href="documents.html">Documents</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Project</h5>
+          <ul>
+            <li><a href="presentations.html">Presentations</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5>Institution</h5>
+          <ul>
+            <li><i class="bi bi-building me-2"></i>Sri Lanka Institute of Information Technology</li>
+            <li><i class="bi bi-mortarboard me-2"></i>Department of Information Technology</li>
+            <li><i class="bi bi-envelope me-2"></i><a href="mailto:mrjeranmark0908@gmail.com">mrjeranmark0908@gmail.com</a></li>
+            <li><i class="bi bi-telephone me-2"></i>+94 76 197 3763</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <span>© <span data-year>2025</span> SignSight Research Project · Jeran Mark · IT22328120</span>
+        <span>Designed for SLIIT — Sri Lanka</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

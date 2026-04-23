@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Domain & Research — literature survey, research gap, problem, objectives, methodology, and technologies for the SignSight project." />
+  <title>Domain | SignSight Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-hand-index-thumb"></i></span>
+        <span class="brand-text">SignSight<small>Research Project</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><i class="bi bi-list fs-2"></i></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="domain.html">Domain</a></li>
+          <li class="nav-item"><a class="nav-link" href="milestones.html">Milestones</a></li>
+          <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+          <li class="nav-item"><a class="nav-link" href="presentations.html">Presentations</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gradient btn-sm" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="breadcrumb-nav"><a href="index.html">Home</a><i class="bi bi-chevron-right"></i> Domain</span>
+      <h1>Domain &amp; Research Details</h1>
+      <p>A structured walkthrough of the literature, the gap in existing systems, the research problem, objectives, methodology, and technologies behind the SignSight recognition pipeline.</p>
+    </div>
+  </header>
+
+  <!-- Literature Survey -->
+  <section>
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6 reveal">
+          <span class="section-tag">01 · Literature Survey</span>
+          <h2 class="section-title">Prior work in sign language recognition</h2>
+          <p>Early sign recognition systems segmented hands and classified static shapes using HMMs and hand-crafted features. Later, deep CNNs improved robustness to appearance variation, and two-stream architectures fused motion and appearance for action recognition.</p>
+          <p>Once each frame is reduced to a compact feature vector, recurrent models — particularly LSTM and GRU — capture temporal ordering effectively. Transformer encoders have pushed state-of-the-art on large benchmarks, but remain data-hungry for low-resource languages like Tamil Sign Language.</p>
+          <p>MediaPipe Holistic now unifies pose, face, and hand tracking at frame-rate on ordinary hardware, making landmark-based recognition a practical path forward for regional sign languages where parallel corpora are scarce.</p>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="info-card h-100">
+            <span class="num">KEY REFERENCES</span>
+            <h3>Foundational & recent studies</h3>
+            <ul>
+              <li><strong>Lugaresi et al. (2019)</strong> — MediaPipe framework for perception pipelines.</li>
+              <li><strong>Hochreiter &amp; Schmidhuber (1997)</strong> — Long Short-Term Memory networks.</li>
+              <li><strong>Cho et al. (2014)</strong> — Gated Recurrent Units for sequence modelling.</li>
+              <li><strong>Camgoz et al. (2020)</strong> — Sign Language Transformers (CVPR).</li>
+              <li><strong>Koller et al. (2018)</strong> — Deep sign language recognition benchmarks.</li>
+              <li><strong>Kapoor et al. (2023)</strong> — Landmark-based ASL recognition with MediaPipe.</li>
+              <li><strong>Nair &amp; Iyer (2024)</strong> — LSTM-based ISL gesture sequence modelling.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Gap -->
+  <section class="bg-soft">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">02 · Research Gap</span>
+        <h2 class="section-title">Limitations of existing systems</h2>
+        <p class="section-subtitle">Most published work targets ASL or ISL under controlled conditions. Tamil Sign Language, dynamic transitions, and consumer-grade deployment are consistently underserved.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 01</span>
+            <h3>Static over dynamic</h3>
+            <p>Many systems classify isolated hand poses and ignore the fluid transitional movements that are central to real TSL communication.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 02</span>
+            <h3>Lab-only conditions</h3>
+            <p>Fixed lighting, stable backgrounds, and uniform signers limit real-world generalisation in homes, classrooms, and public spaces.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 03</span>
+            <h3>Hardware dependency</h3>
+            <p>Glove sensors, depth cameras, and multi-camera rigs raise cost and block adoption in low-resource contexts.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 04</span>
+            <h3>Opaque predictions</h3>
+            <p>Deep CNNs often behave as "black boxes", eroding user trust and making debugging difficult for educators and engineers.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 05</span>
+            <h3>No TSL-specific corpora</h3>
+            <p>ASL and BSL benchmarks dominate the literature, leaving Tamil Sign Language with limited annotated datasets.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="info-card">
+            <span class="num">GAP 06</span>
+            <h3>Train-serve mismatch</h3>
+            <p>Preprocessing rules in notebooks rarely match what runs in production, creating silent drops in deployment accuracy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Problem -->
+  <section>
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <span class="section-tag">03 · Research Problem</span>
+          <h2 class="section-title">Communication barriers in the hearing-impaired community</h2>
+          <p>Approximately 300,000 individuals in Sri Lanka rely on Tamil Sign Language as their primary means of communication. Yet assistive technology that interprets signing from ordinary cameras remains scarce, fragmented, or priced out of reach.</p>
+          <p>The lack of standardised lexicons, the subtle fluidity of transitional movements, and the diversity of signing environments make robust recognition a genuinely hard problem — one that must be solved transparently and affordably to matter at community scale.</p>
+          <p><strong>The core question:</strong> Can a computer-vision pipeline built on consumer webcams and open-source libraries reliably recognise dynamic TSL gestures in real time, with enough clarity for educators, caregivers, and signers to trust and adopt it?</p>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="info-card">
+            <span class="num">GUIDING QUESTIONS</span>
+            <h3>Five research questions</h3>
+            <ul>
+              <li>Can holistic landmark vectors alone discriminate between 15 TSL glosses without appearance-based CNNs?</li>
+              <li>Does a fixed-length window with transparent resampling keep training and live inference comparable?</li>
+              <li>Can the entire stack run on hardware students and small labs already own?</li>
+              <li>How much does a Bi-GRU baseline trade off against a deeper Bi-LSTM for this problem size?</li>
+              <li>How can explainable AI (e.g. SHAP) increase user trust in the output?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Objectives -->
+  <section class="bg-soft">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">04 · Research Objectives</span>
+        <h2 class="section-title">What this project set out to achieve</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5 reveal">
+          <div class="info-card h-100" style="background: var(--gradient-primary); color:#fff; border:none;">
+            <span class="num" style="color:#a5f3fc">MAIN OBJECTIVE</span>
+            <h3 style="color:#fff">Develop a real-time dynamic sign language recognition system</h3>
+            <p style="color:rgba(255,255,255,0.9)">A deployable, transparent, and affordable pipeline that converts dynamic TSL gestures into text with enough accuracy to be useful in schools, homes, and community centres.</p>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-3">
+            <div class="col-md-6 reveal">
+              <div class="info-card h-100">
+                <span class="num">SUB-01</span>
+                <h3>Improve gesture accuracy</h3>
+                <p>Use holistic landmarks, standardisation, and PCA to raise recognition accuracy above practical deployment thresholds.</p>
+              </div>
+            </div>
+            <div class="col-md-6 reveal">
+              <div class="info-card h-100">
+                <span class="num">SUB-02</span>
+                <h3>Reduce recognition delay</h3>
+                <p>Keep end-to-end latency low enough for live conversation on a mid-range laptop without a GPU.</p>
+              </div>
+            </div>
+            <div class="col-md-6 reveal">
+              <div class="info-card h-100">
+                <span class="num">SUB-03</span>
+                <h3>Support continuous detection</h3>
+                <p>Design the sliding-window buffer so that isolated-gloss models extend naturally toward continuous recognition.</p>
+              </div>
+            </div>
+            <div class="col-md-6 reveal">
+              <div class="info-card h-100">
+                <span class="num">SUB-04</span>
+                <h3>Keep the pipeline explainable</h3>
+                <p>Surface a 0–100 confidence score and feature attributions so that users understand why the system predicts what it does.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology -->
+  <section>
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">05 · Methodology</span>
+        <h2 class="section-title">System workflow, end-to-end</h2>
+        <p class="section-subtitle">From a user gesturing in front of a webcam to a gloss prediction appearing on screen — each stage of the pipeline is aligned between training and live inference.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-8 mx-auto">
+          <div class="methodology-step reveal">
+            <span class="step-num">1</span>
+            <div><h5>User performs a gesture</h5><p>The signer performs one of 15 TSL glosses in front of a consumer-grade webcam in normal lighting.</p></div>
+          </div>
+          <div class="methodology-step reveal">
+            <span class="step-num">2</span>
+            <div><h5>Camera captures hand movement</h5><p>OpenCV streams frames in real time. MediaPipe Holistic extracts a 1,662-D vector per frame from pose, face, and hand landmarks.</p></div>
+          </div>
+          <div class="methodology-step reveal">
+            <span class="step-num">3</span>
+            <div><h5>Temporal alignment</h5><p>Frames are length-normalised into a fixed window (45 for Bi-LSTM, 32 for Bi-GRU). Missing detections fall back to the last valid frame to avoid zero spikes.</p></div>
+          </div>
+          <div class="methodology-step reveal">
+            <span class="step-num">4</span>
+            <div><h5>Scaling &amp; projection</h5><p>A StandardScaler fitted on training data transforms features to zero mean and unit variance; a 256-component PCA concentrates variance and dampens sensor noise.</p></div>
+          </div>
+          <div class="methodology-step reveal">
+            <span class="step-num">5</span>
+            <div><h5>Model processes the sequence</h5><p>A 3-layer bidirectional LSTM (64-128-64) is the primary classifier; a 3-layer Bi-GRU acts as a lighter parallel baseline. Both use dropout and recurrent dropout.</p></div>
+          </div>
+          <div class="methodology-step reveal">
+            <span class="step-num">6</span>
+            <div><h5>System outputs text</h5><p>The softmax layer emits a gloss label and confidence score. Optional SHAP attribution highlights which landmarks drove the prediction.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies Used -->
+  <section class="bg-soft">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">06 · Technologies Used</span>
+        <h2 class="section-title">The tools behind the build</h2>
+        <p class="section-subtitle">Open-source libraries chosen for reproducibility, community support, and low deployment cost.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <div class="tech-chip"><i class="bi bi-filetype-py"></i><span>Python 3.x</span><small>Core language</small></div>
+        <div class="tech-chip"><i class="bi bi-cpu"></i><span>TensorFlow / Keras</span><small>Deep learning</small></div>
+        <div class="tech-chip"><i class="bi bi-diagram-2"></i><span>Bi-LSTM</span><small>Primary classifier</small></div>
+        <div class="tech-chip"><i class="bi bi-hdd-network"></i><span>Bi-GRU</span><small>Baseline</small></div>
+        <div class="tech-chip"><i class="bi bi-camera-reels"></i><span>OpenCV</span><small>Video pipeline</small></div>
+        <div class="tech-chip"><i class="bi bi-palette"></i><span>MediaPipe Holistic</span><small>Landmarks</small></div>
+        <div class="tech-chip"><i class="bi bi-braces"></i><span>scikit-learn</span><small>Scaler + PCA</small></div>
+        <div class="tech-chip"><i class="bi bi-bar-chart"></i><span>NumPy / Pandas</span><small>Data handling</small></div>
+        <div class="tech-chip"><i class="bi bi-filetype-html"></i><span>HTML / CSS / JS</span><small>Web client</small></div>
+        <div class="tech-chip"><i class="bi bi-bootstrap"></i><span>Bootstrap 5</span><small>Responsive UI</small></div>
+        <div class="tech-chip"><i class="bi bi-box"></i><span>Docker</span><small>Deployment</small></div>
+        <div class="tech-chip"><i class="bi bi-github"></i><span>Git / GitHub</span><small>Version control</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand"><span class="brand-icon"><i class="bi bi-hand-index-thumb text-white"></i></span> SignSight</span>
+          <p class="mt-2">Dynamic Sign Language Recognition Using Computer Vision. A final-year research project at SLIIT focused on accessible communication for the hearing-impaired community.</p>
+          <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="bi bi-github text-white"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin text-white"></i></a>
+            <a href="mailto:mrjeranmark0908@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill text-white"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2"><h5>Explore</h5>
+          <ul><li><a href="index.html">Home</a></li><li><a href="domain.html">Domain</a></li><li><a href="milestones.html">Milestones</a></li><li><a href="documents.html">Documents</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2"><h5>Project</h5>
+          <ul><li><a href="presentations.html">Presentations</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul>
+        </div>
+        <div class="col-lg-4"><h5>Institution</h5>
+          <ul>
+            <li><i class="bi bi-building me-2"></i>Sri Lanka Institute of Information Technology</li>
+            <li><i class="bi bi-mortarboard me-2"></i>Department of Information Technology</li>
+            <li><i class="bi bi-envelope me-2"></i><a href="mailto:mrjeranmark0908@gmail.com">mrjeranmark0908@gmail.com</a></li>
+            <li><i class="bi bi-telephone me-2"></i>+94 76 197 3763</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <span>© <span data-year>2025</span> SignSight Research Project · Jeran Mark · IT22328120</span>
+        <span>Designed for SLIIT — Sri Lanka</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

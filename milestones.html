@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project milestones and assessment timeline for the SignSight research project at SLIIT." />
+  <title>Milestones | SignSight Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <span class="brand-icon"><i class="bi bi-hand-index-thumb"></i></span>
+        <span class="brand-text">SignSight<small>Research Project</small></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><i class="bi bi-list fs-2"></i></button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="domain.html">Domain</a></li>
+          <li class="nav-item"><a class="nav-link" href="milestones.html">Milestones</a></li>
+          <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
+          <li class="nav-item"><a class="nav-link" href="presentations.html">Presentations</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item ms-lg-2"><a class="btn btn-gradient btn-sm" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <span class="breadcrumb-nav"><a href="index.html">Home</a><i class="bi bi-chevron-right"></i> Milestones</span>
+      <h1>Project Milestones</h1>
+      <p>The SignSight research project is assessed across five milestones covering proposal, progress reviews, a final assessment, and a viva. Mark allocations reflect the SLIIT IT4010 Research Project guidelines.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container">
+      <!-- Filter / quick jump -->
+      <div class="row justify-content-center mb-5 reveal">
+        <div class="col-lg-6">
+          <label class="form-label" for="milestoneSelect">Jump to a milestone</label>
+          <select id="milestoneSelect" class="form-select" onchange="if(this.value) location.hash=this.value;">
+            <option value="">-- Select a milestone --</option>
+            <option value="#m1">Project Proposal</option>
+            <option value="#m2">Progress Presentation 1</option>
+            <option value="#m3">Progress Presentation 2</option>
+            <option value="#m4">Final Assessment</option>
+            <option value="#m5">Viva</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+
+        <div class="timeline-item reveal" id="m1">
+          <div class="timeline-dot"><i class="bi bi-file-earmark-text"></i></div>
+          <div class="timeline-card">
+            <h4>Project Proposal</h4>
+            <p class="mb-0 text-muted">Topic assessment, proposal report submission, and proposal presentation covering the research problem, literature survey, methodology, and feasibility.</p>
+            <div class="meta">
+              <span><i class="bi bi-calendar-event"></i> July 2025</span>
+              <span class="mark-pill"><i class="bi bi-award"></i> 12% Marks</span>
+              <span><i class="bi bi-check2-circle"></i> Completed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="m2">
+          <div class="timeline-dot"><i class="bi bi-clipboard-data"></i></div>
+          <div class="timeline-card">
+            <h4>Progress Presentation 1</h4>
+            <p class="mb-0 text-muted">50% project progress review — dataset collection, landmark extraction pipeline, baseline Bi-LSTM training, and preliminary evaluation results.</p>
+            <div class="meta">
+              <span><i class="bi bi-calendar-event"></i> October 2025</span>
+              <span class="mark-pill"><i class="bi bi-award"></i> 15% Marks</span>
+              <span><i class="bi bi-hourglass-split"></i> Scheduled</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="m3">
+          <div class="timeline-dot"><i class="bi bi-graph-up-arrow"></i></div>
+          <div class="timeline-card">
+            <h4>Progress Presentation 2</h4>
+            <p class="mb-0 text-muted">90% progress — full Bi-LSTM and Bi-GRU evaluation, integration with the SignSight web client, and user feedback from pilot testing.</p>
+            <div class="meta">
+              <span><i class="bi bi-calendar-event"></i> February 2026</span>
+              <span class="mark-pill"><i class="bi bi-award"></i> 18% Marks</span>
+              <span><i class="bi bi-hourglass"></i> Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="m4">
+          <div class="timeline-dot"><i class="bi bi-trophy"></i></div>
+          <div class="timeline-card">
+            <h4>Final Assessment</h4>
+            <p class="mb-0 text-muted">Submission of the final individual research report, camera-ready IEEE paper, research poster, and the final project presentation to the evaluation panel.</p>
+            <div class="meta">
+              <span><i class="bi bi-calendar-event"></i> May 2026</span>
+              <span class="mark-pill"><i class="bi bi-award"></i> 20% Marks</span>
+              <span><i class="bi bi-hourglass"></i> Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="m5">
+          <div class="timeline-dot"><i class="bi bi-mic"></i></div>
+          <div class="timeline-card">
+            <h4>Viva &amp; Demonstration</h4>
+            <p class="mb-0 text-muted">Final viva voce, live demonstration of the recognition system, commercialization video, and user testing session with a research team member.</p>
+            <div class="meta">
+              <span><i class="bi bi-calendar-event"></i> June 2026</span>
+              <span class="mark-pill"><i class="bi bi-award"></i> 10% Marks</span>
+              <span><i class="bi bi-hourglass"></i> Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Summary -->
+      <div class="row g-4 mt-5 reveal">
+        <div class="col-md-4"><div class="highlight-card"><h2><span data-count="5">0</span></h2><p>Milestones</p></div></div>
+        <div class="col-md-4"><div class="highlight-card alt"><h2><span data-count="75" data-suffix="%">0%</span></h2><p>Total Evaluation Weight</p></div></div>
+        <div class="col-md-4"><div class="highlight-card dark"><h2><span data-count="12">0</span></h2><p>Months · 2025 – 2026</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <span class="footer-brand"><span class="brand-icon"><i class="bi bi-hand-index-thumb text-white"></i></span> SignSight</span>
+          <p class="mt-2">Dynamic Sign Language Recognition Using Computer Vision. A final-year research project at SLIIT focused on accessible communication for the hearing-impaired community.</p>
+          <div class="social-links">
+            <a href="#"><i class="bi bi-github text-white"></i></a>
+            <a href="#"><i class="bi bi-linkedin text-white"></i></a>
+            <a href="mailto:mrjeranmark0908@gmail.com"><i class="bi bi-envelope-fill text-white"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2"><h5>Explore</h5>
+          <ul><li><a href="index.html">Home</a></li><li><a href="domain.html">Domain</a></li><li><a href="milestones.html">Milestones</a></li><li><a href="documents.html">Documents</a></li></ul>
+        </div>
+        <div class="col-6 col-lg-2"><h5>Project</h5>
+          <ul><li><a href="presentations.html">Presentations</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul>
+        </div>
+        <div class="col-lg-4"><h5>Institution</h5>
+          <ul>
+            <li><i class="bi bi-building me-2"></i>Sri Lanka Institute of Information Technology</li>
+            <li><i class="bi bi-mortarboard me-2"></i>Department of Information Technology</li>
+            <li><i class="bi bi-envelope me-2"></i><a href="mailto:mrjeranmark0908@gmail.com">mrjeranmark0908@gmail.com</a></li>
+            <li><i class="bi bi-telephone me-2"></i>+94 76 197 3763</li>
+          </ul>
+        </div>
+      </div>
+      <hr />
+      <div class="copyright">
+        <span>© <span data-year>2025</span> SignSight Research Project · Jeran Mark · IT22328120</span>
+        <span>Designed for SLIIT — Sri Lanka</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
