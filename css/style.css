@@ -227,6 +227,7 @@ a:hover { color: var(--primary-dark); }
   border-radius: 999px;
   font-size: 0.82rem;
   font-weight: 500;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   margin-bottom: 1.5rem;
 }
