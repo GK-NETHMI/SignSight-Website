@@ -124,7 +124,7 @@
         </div>
         <div class="col-lg-6 reveal">
           <div class="info-card h-100" style="background: var(--gradient-primary); color:#fff; border:none;">
-            <span class="num" style="color:#a5f3fc">CORE QUESTION</span>
+            <span class="num" style="color:#f6e1ad">CORE QUESTION</span>
             <h3 style="color:#fff">Five research questions</h3>
             <ul style="color:rgba(255,255,255,0.9);">
               <li>Can holistic landmarks alone discriminate between 15 TSL glosses?</li>
@@ -145,47 +145,63 @@
       <div class="text-center mb-5 reveal">
         <span class="section-tag">04 · Research Objectives</span>
         <h2 class="section-title">What this project achieves</h2>
-        <p class="section-subtitle">A deployable, transparent, and affordable pipeline for dynamic Tamil Sign Language recognition.</p>
+        <p class="section-subtitle">A deployable, transparent, and affordable platform for dynamic Tamil Sign Language recognition, learning, conversion, and emotionally aware child support.</p>
       </div>
 
-      <div class="row g-4">
-        <div class="col-lg-6 reveal">
-          <div class="info-card h-100" style="background: var(--gradient-primary); color:#fff; border:none;">
-            <span class="num" style="color:#a5f3fc">PRIMARY OBJECTIVE</span>
-            <h3 style="color:#fff">Real-time TSL Recognition</h3>
-            <p style="color:rgba(255,255,255,0.9);">Deploy a transparent system that converts dynamic TSL gestures into text with sufficient accuracy for schools, homes, and community centres.</p>
+      <div class="row g-4 objectives-grid">
+        <div class="col-12 reveal">
+          <div class="info-card primary-objective h-100">
+            <span class="num">PRIMARY OBJECTIVE</span>
+            <h3>Tamil Sign Language Accessibility Platform</h3>
+            <p>Design and deploy a comprehensive, multi-component TSL accessibility system that addresses the communication barriers faced by Tamil-speaking hearing-impaired individuals. The platform integrates real-time dynamic sign detection, spoken audio and video to TSL conversion, an interactive structured learning and evaluation environment, and an emotionally aware module tailored for children - all built on affordable, webcam-only hardware with no depth sensors or specialised equipment required.</p>
           </div>
         </div>
-        <div class="col-lg-6">
-          <div class="row g-3">
-            <div class="col-6 reveal">
-              <div class="info-card h-100">
-                <span class="num">OBJ-01</span>
-                <h4>Gesture Accuracy</h4>
-                <p>Use holistic landmarks and PCA to exceed practical deployment thresholds.</p>
-              </div>
-            </div>
-            <div class="col-6 reveal">
-              <div class="info-card h-100">
-                <span class="num">OBJ-02</span>
-                <h4>Low Latency</h4>
-                <p>Keep inference fast on consumer laptops without GPUs for real-time conversation.</p>
-              </div>
-            </div>
-            <div class="col-6 reveal">
-              <div class="info-card h-100">
-                <span class="num">OBJ-03</span>
-                <h4>Continuous Detection</h4>
-                <p>Design sliding buffers for natural progression to continuous recognition.</p>
-              </div>
-            </div>
-            <div class="col-6 reveal">
-              <div class="info-card h-100">
-                <span class="num">OBJ-04</span>
-                <h4>Explainability</h4>
-                <p>Surface confidence scores and feature attributions for user trust.</p>
-              </div>
-            </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-01</span>
+            <h4>Dynamic Sign Detection</h4>
+            <p>Design and train a deep learning pipeline that captures real-time TSL gestures through a standard webcam using MediaPipe Holistic, extracting 33 pose, 468 face, and 42 hand landmarks per frame. Apply PCA-based dimensionality reduction and sequence normalisation across a 45-frame temporal window. Train and compare Bi-LSTM and Bi-GRU architectures to classify dynamic signs with sufficient accuracy for practical deployment in schools, homes, and community centres - without requiring GPUs or specialised hardware.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-02</span>
+            <h4>Audio and Video to TSL Conversion</h4>
+            <p>Build a pipeline that accepts spoken Tamil audio recordings or uploaded video content and converts them into corresponding Tamil Sign Language representations in near real-time. The system applies speech-to-text recognition using Librosa and audio processing libraries, aligns recognised text with TSL vocabulary, and delivers sign output through a React-based frontend - making everyday media, educational content, and public service announcements accessible to hearing-impaired Tamil speakers.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-03</span>
+            <h4>Structured TSL Learning and Evaluation</h4>
+            <p>Develop a fully interactive TSL learning platform that supports hearing-impaired students through structured lesson modules, multi-level knowledge quizzes, and video-based practical sign assessment. The system uses MediaPipe hand landmark detection and a RandomForest classifier to evaluate a student's signing performance in real time. SHAP-based explainable AI surfaces feature attribution scores so students and mentors can understand which hand and pose features drive each prediction - enabling targeted improvement and transparent progress tracking stored in MongoDB and Firebase.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-04</span>
+            <h4>Emotion-aware Children's TSL Support</h4>
+            <p>Implement a child-centred assistive module that monitors a child's facial emotional state while they engage with cartoon or educational video content. Using MobileNetV2 for emotion classification and MediaPipe for face detection, the system analyses emotional accuracy, confidence levels, and consistency across the viewing session. Results are compiled into a structured HTML report and automatically delivered to a parent or guardian via SMTP email - ensuring caregivers remain actively informed about their child's emotional engagement and learning progress.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-05</span>
+            <h4>Explainability and User Trust</h4>
+            <p>Ensure all model predictions across the platform are transparent and interpretable. Every sign detection result is accompanied by a 0-100 Recognition Confidence Score and SHAP-based feature attribution that highlights which landmarks most influenced the prediction. This explainability layer is designed to build trust among educators, students, parents, and healthcare professionals - making the system suitable for deployment in high-stakes accessibility contexts beyond the lab.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6 reveal">
+          <div class="info-card objective-card h-100">
+            <span class="num">OBJ-06</span>
+            <h4>Affordable and Hardware-Independent Deployment</h4>
+            <p>Ensure the entire platform operates on standard consumer-grade hardware - a laptop with a built-in webcam, no depth cameras, no glove sensors, and no multi-camera rigs. All components are deployed via lightweight Flask REST APIs consumed by a React and Vite frontend, keeping the system accessible to low-resource schools, community centres, and households across Sri Lanka and the broader Tamil-speaking world.</p>
           </div>
         </div>
       </div>

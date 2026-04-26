@@ -6,6 +6,9 @@
 (function () {
   'use strict';
 
+  // Progressive enhancement hook: keep content visible when JS does not run.
+  document.documentElement.classList.add('js');
+
   // ----------------------------------------------------------
   // Load navbar component (if placeholder exists)
   // ----------------------------------------------------------
