@@ -7,25 +7,83 @@
   'use strict';
 
   // ----------------------------------------------------------
-  // Navbar shadow on scroll + active link highlight
+  // Load navbar component (if placeholder exists)
   // ----------------------------------------------------------
-  const navbar = document.querySelector('.navbar');
-  const handleNavScroll = () => {
-    if (!navbar) return;
-    if (window.scrollY > 30) navbar.classList.add('scrolled');
-    else navbar.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', handleNavScroll, { passive: true });
-  handleNavScroll();
+  function loadNavbar() {
+    const placeholder = document.getElementById('navbar-placeholder');
+    if (!placeholder) return;
 
-  // Highlight active page link based on filename
-  const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
-    const href = (link.getAttribute('href') || '').toLowerCase();
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
+    if (window.location.protocol !== 'file:') {
+      fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+          placeholder.innerHTML = html;
+          initializeNavbar();
+        })
+        .catch(err => {
+          console.error('Fetch failed:', err);
+          loadNavbarViaXHR();
+        });
+    } else {
+      loadNavbarViaXHR();
     }
-  });
+  }
+
+  function loadNavbarViaXHR() {
+    const placeholder = document.getElementById('navbar-placeholder');
+    if (!placeholder) return;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'components/navbar.html', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        placeholder.innerHTML = xhr.responseText;
+        initializeNavbar();
+      } else {
+        console.error('Failed to load navbar: HTTP', xhr.status);
+      }
+    };
+    xhr.onerror = function() {
+      console.error('XHR error loading navbar');
+    };
+    xhr.send();
+  }
+
+  // Initialize navbar after loading
+  function initializeNavbar() {
+    // Navbar shadow on scroll
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+      const handleNavScroll = () => {
+        if (window.scrollY > 30) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', handleNavScroll, { passive: true });
+      handleNavScroll();
+    }
+
+    // Highlight active page link based on filename
+    const currentPage = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Load navbar when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadNavbar);
+  } else {
+    loadNavbar();
+  }
+
+  // Initialize navbar if it's already in the DOM (for backward compatibility)
+  const navbar = document.querySelector('.navbar');
+  if (navbar && !document.getElementById('navbar-placeholder')) {
+    initializeNavbar();
+  }
 
   // ----------------------------------------------------------
   // Scroll reveal (IntersectionObserver)
@@ -188,5 +246,61 @@
   document.querySelectorAll('[data-year]').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
+
+  // Load footer component
+  function loadFooter() {
+    const placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+
+    // Try fetch first (works with http/https)
+    if (window.location.protocol !== 'file:') {
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(html => {
+          placeholder.innerHTML = html;
+          updateYearInFooter();
+        })
+        .catch(err => {
+          console.error('Fetch failed:', err);
+          loadFooterViaXHR();
+        });
+    } else {
+      // Use XMLHttpRequest for file:// protocol
+      loadFooterViaXHR();
+    }
+  }
+
+  function loadFooterViaXHR() {
+    const placeholder = document.getElementById('footer-placeholder');
+    if (!placeholder) return;
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'components/footer.html', true);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        placeholder.innerHTML = xhr.responseText;
+        updateYearInFooter();
+      } else {
+        console.error('Failed to load footer: HTTP', xhr.status);
+      }
+    };
+    xhr.onerror = function() {
+      console.error('XHR error loading footer');
+    };
+    xhr.send();
+  }
+
+  function updateYearInFooter() {
+    document.querySelectorAll('#footer-placeholder [data-year]').forEach(el => {
+      el.textContent = new Date().getFullYear();
+    });
+  }
+
+  // Load footer when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadFooter);
+  } else {
+    loadFooter();
+  }
 
 })();

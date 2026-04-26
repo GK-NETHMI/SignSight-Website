@@ -12,33 +12,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/logo.png" alt="SignSight Logo" class="logo-img">
-        <span class="brand-text">SignSight<small>Research Project</small></span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="bi bi-list fs-2"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="domain.html">Domain</a></li>
-          <li class="nav-item"><a class="nav-link" href="milestones.html">Milestones</a></li>
-          <li class="nav-item"><a class="nav-link" href="documents.html">Documents</a></li>
-          <li class="nav-item"><a class="nav-link" href="presentations.html">Presentations</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-gradient btn-sm" href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-placeholder"></div>
 
   <!-- Hero -->
   <header class="hero">
@@ -81,9 +61,8 @@
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal">
           <span class="section-tag">Project Overview</span>
-          <h2 class="section-title">Bridging communication for the Deaf and hard-of-hearing community</h2>
-          <p>SignSight is a research initiative at the Sri Lanka Institute of Information Technology that applies computer vision and deep recurrent networks to translate dynamic hand gestures into readable text in real time. The system is built around MediaPipe Holistic landmarks, StandardScaler and PCA preprocessing, and stacked Bi-LSTM / Bi-GRU temporal classifiers.</p>
-          <p>By relying only on a consumer-grade webcam and open-source tools — OpenCV, TensorFlow, MediaPipe, scikit-learn — the pipeline stays lightweight, reproducible, and honest about its limits, making it accessible for schools, NGOs, and community settings across Sri Lanka.</p>
+          <h2 class="section-title">Bridging communication for the Deaf and hard-of-hearing community. See the Sign. Learn the Language.</h2>
+          <p>is a BSc (Hons) thesis project developed by a team of four Information Technology students under Project ID 25-26J-404. The platform is designed to bridge the communication gap faced by Tamil-speaking individuals with hearing impairments by providing a comprehensive Tamil Sign Language (TSL) support system. It combines machine learning, computer vision, and speech recognition to convert text, audio, and video content into TSL, while also offering an interactive learning and evaluation environment. The system further extends its reach to children through an emotionally aware module that monitors engagement and delivers insights to guardians.</p>
           <a class="btn btn-outline-primary-custom mt-2" href="domain.html">Read the Research <i class="bi bi-book ms-2"></i></a>
         </div>
         <div class="col-lg-6 reveal">
@@ -124,49 +103,49 @@
       <div class="text-center mb-5 reveal">
         <span class="section-tag">Key Features</span>
         <h2 class="section-title">What the system does</h2>
-        <p class="section-subtitle">A complete, end-to-end recognition stack — from raw webcam frames to predicted glosses — with preprocessing, training, and inference aligned across the pipeline.</p>
+        <p class="section-subtitle">A complete, end-to-end Tamil Sign Language platform — from audio/video input to sign output — covering learning, detection, emotion awareness, and accessibility.</p>
       </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4 reveal">
           <div class="feature-card">
             <div class="feature-icon"><i class="bi bi-camera-video"></i></div>
-            <h4>Real-Time Capture</h4>
-            <p>Uses ordinary webcams with MediaPipe Holistic to extract 33 pose, 468 face, and 42 hand landmarks per frame — no depth sensors, no gloves.</p>
+            <h4>Audio/Video to TSL</h4>
+            <p>Converts spoken Tamil audio or uploaded video into Tamil Sign Language output using speech recognition and machine learning in near real-time.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-bullseye"></i></div>
+            <h4>Real-time gesture detection</h4>
+            <p>Captures TSL gestures via webcam using MediaPipe Holistic — extracting pose, face, and hand landmarks per frame with no depth sensors or gloves required.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="bi bi-check2-square"></i></div>
+            <h4>Learning & evaluation</h4>
+            <p>An interactive platform with multi-level quizzes and video-based sign assessments that tracks student progress and provides performance insights for mentors.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="feature-card">
             <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
-            <h4>Dynamic Sequence Model</h4>
-            <p>A 3-layer bidirectional LSTM (64-128-64) with recurrent dropout captures temporal structure across a 45-frame window.</p>
+            <h4>LSTM sequence model</h4>
+            <p>A temporal deep learning model captures gesture sequences across frames, enabling accurate dynamic sign recognition beyond static hand positions.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="feature-card">
-            <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
-            <h4>Lightweight Bi-GRU Baseline</h4>
-            <p>A parallel Bi-GRU model with fewer parameters and a 32-frame buffer, offering a lighter deployment option for low-power devices.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="feature-card">
-            <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
-            <h4>Train-Serve Consistency</h4>
-            <p>Scaler, PCA, and sequence length rules are serialized and shared between training notebooks and the live inference pipeline.</p>
+            <div class="feature-icon"><i class="bi bi-emoji-smile"></i></div>
+            <h4>Emotion-aware children's mode</h4>
+            <p>Detects facial emotions of children while watching content using MobileNetV2, then auto-generates guardian-friendly reports with learning tips via email.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="feature-card">
             <div class="feature-icon"><i class="bi bi-graph-up-arrow"></i></div>
-            <h4>Confidence Scoring</h4>
-            <p>Each prediction is returned with a 0–100 Recognition Confidence Score and optional SHAP-style feature attribution.</p>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4 reveal">
-          <div class="feature-card">
-            <div class="feature-icon"><i class="bi bi-universal-access"></i></div>
-            <h4>Accessibility-First UI</h4>
-            <p>A cross-platform web/mobile client with large icons, high-contrast visuals, and intuitive feedback tailored for hearing-impaired users.</p>
+            <h4>Explainable AI insights</h4>
+            <p>SHAP-based feature attribution gives transparent confidence scores for sign predictions, helping students and educators understand model decisions.</p>
           </div>
         </div>
       </div>
@@ -246,58 +225,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-4">
-          <span class="footer-brand">
-            <span class="brand-icon"><i class="bi bi-hand-index-thumb text-white"></i></span>
-            SignSight
-          </span>
-          <p class="mt-2">A multi-component deep learning system that integrates speech recognition, computer vision, and sequence modeling to translate Tamil audio/video and gestures into Tamil Sign Language, while enabling learning and contextual support.</p>
-          <div class="social-links">
-            <a href="#" aria-label="GitHub"><i class="bi bi-github text-white"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin text-white"></i></a>
-            <a href="mailto:mrjeranmark0908@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill text-white"></i></a>
-          </div>
-        </div>
-        <div class="col-6 col-lg-2">
-          <h5>Explore</h5>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="domain.html">Domain</a></li>
-            <li><a href="milestones.html">Milestones</a></li>
-            <li><a href="documents.html">Documents</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2">
-          <h5>Project</h5>
-          <ul>
-            <li><a href="presentations.html">Presentations</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4">
-          <h5>Institution</h5>
-          <ul>
-            <li><i class="bi bi-building me-2"></i>Sri Lanka Institute of Information Technology</li>
-            <li><i class="bi bi-mortarboard me-2"></i>Department of Information Technology</li>
-            <li><i class="bi bi-envelope me-2"></i><a href="mailto:signsight@gmail.com">signsight@gmail.com</a></li>
-            <li><i class="bi bi-telephone me-2"></i>+94 11 754 4801</li>
-          </ul>
-        </div>
-      </div>
-      <hr />
-      <div class="copyright">
-        <span>© <span data-year>2025</span> SignSight Research Project</span>
-        <span>Designed for SLIIT — Sri Lanka</span>
-      </div>
-    </div>
-  </footer>
+   <!-- Footer -->
+   <div id="footer-placeholder"></div>
 
-  <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
+   <button class="scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
