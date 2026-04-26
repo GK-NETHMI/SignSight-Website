@@ -43,30 +43,51 @@
     </div>
   </header>
 
-  <!-- Literature Survey -->
+  <!-- Background -->
   <section>
     <div class="container">
       <div class="row g-5">
-        <div class="col-lg-6 reveal">
-          <span class="section-tag">01 · Literature Survey</span>
-          <h2 class="section-title">Prior work in sign language recognition</h2>
-          <p>Early sign recognition systems segmented hands and classified static shapes using HMMs and hand-crafted features. Later, deep CNNs improved robustness to appearance variation, and two-stream architectures fused motion and appearance for action recognition.</p>
-          <p>Once each frame is reduced to a compact feature vector, recurrent models — particularly LSTM and GRU — capture temporal ordering effectively. Transformer encoders have pushed state-of-the-art on large benchmarks, but remain data-hungry for low-resource languages like Tamil Sign Language.</p>
-          <p>MediaPipe Holistic now unifies pose, face, and hand tracking at frame-rate on ordinary hardware, making landmark-based recognition a practical path forward for regional sign languages where parallel corpora are scarce.</p>
-        </div>
-        <div class="col-lg-6 reveal">
-          <div class="info-card h-100">
-            <span class="num">KEY REFERENCES</span>
-            <h3>Foundational & recent studies</h3>
-            <ul>
-              <li><strong>Lugaresi et al. (2019)</strong> — MediaPipe framework for perception pipelines.</li>
-              <li><strong>Hochreiter &amp; Schmidhuber (1997)</strong> — Long Short-Term Memory networks.</li>
-              <li><strong>Cho et al. (2014)</strong> — Gated Recurrent Units for sequence modelling.</li>
-              <li><strong>Camgoz et al. (2020)</strong> — Sign Language Transformers (CVPR).</li>
-              <li><strong>Koller et al. (2018)</strong> — Deep sign language recognition benchmarks.</li>
-              <li><strong>Kapoor et al. (2023)</strong> — Landmark-based ASL recognition with MediaPipe.</li>
-              <li><strong>Nair &amp; Iyer (2024)</strong> — LSTM-based ISL gesture sequence modelling.</li>
-            </ul>
+        <div class="col-lg-12 reveal">
+          <span class="section-tag">01 · Background</span>
+          <h2 class="section-title">Research Domain</h2>
+          
+          <!-- Navigation Buttons -->
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <button class="btn btn-primary rounded-pill px-4 py-2" onclick="showContent('background')">Background</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-gap')">Research Gap</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-problem')">Research Problem</button>
+            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-objectives')">Research Objectives</button>
+          </div>
+          <div id="content-area" class="info-card h-100">
+            <!-- Background Content -->
+            <div id="background-content" class="content-section">
+              <h4>Research Background</h4>
+              <p>Tamil Sign Language is an important communication method for hearing-impaired people in Sri Lanka. Existing manual interpretation and static sign recognition systems are limited, so a real-time video-based recognition system is needed.</p>
+            </div>
+            
+            <!-- Research Gap Content -->
+            <div id="research-gap-content" class="content-section" style="display: none;">
+              <h4>Research Gap</h4>
+              <p>Most existing studies focus on static signs, controlled environments, or other sign languages like ASL and ISL. Very few works handle dynamic Tamil Sign Language using real-time webcam/video input with lightweight models.</p>
+            </div>
+            
+            <!-- Research Problem Content -->
+            <div id="research-problem-content" class="content-section" style="display: none;">
+              <h4>Research Problem</h4>
+              <p>There is no accurate and low-cost system that can recognize dynamic Tamil Sign Language signs in real time using normal video input and standard devices.</p>
+            </div>
+            
+            <!-- Research Objectives Content -->
+            <div id="research-objectives-content" class="content-section" style="display: none;">
+              <h4>Research Objectives</h4>
+              <ul>
+                <li>To develop a real-time Tamil Sign Language recognition system.</li>
+                <li>To process video input using computer vision techniques.</li>
+                <li>To classify sign gestures using deep learning models.</li>
+                <li>To compare different models and find the best one for the dataset.</li>
+                <li>To make the system easy to use and accessible for hearing-impaired users.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -207,39 +228,34 @@
     </div>
   </section>
 
-  <!-- Methodology -->
+  <!-- System Workflow -->
   <section>
     <div class="container">
       <div class="text-center mb-5 reveal">
-        <span class="section-tag">05 · Methodology</span>
-        <h2 class="section-title">System workflow, end-to-end</h2>
-        <p class="section-subtitle">From a user gesturing in front of a webcam to a gloss prediction appearing on screen — each stage of the pipeline is aligned between training and live inference.</p>
+        <span class="section-tag">05 · System Workflow</span>
+        <h2 class="section-title">System Workflow</h2>
       </div>
       <div class="row g-4">
         <div class="col-lg-8 mx-auto">
           <div class="methodology-step reveal">
             <span class="step-num">1</span>
-            <div><h5>User performs a gesture</h5><p>The signer performs one of 15 TSL glosses in front of a consumer-grade webcam in normal lighting.</p></div>
+            <div><h5>User uploads a sign video or opens webcam.</h5></div>
           </div>
           <div class="methodology-step reveal">
             <span class="step-num">2</span>
-            <div><h5>Camera captures hand movement</h5><p>OpenCV streams frames in real time. MediaPipe Holistic extracts a 1,662-D vector per frame from pose, face, and hand landmarks.</p></div>
+            <div><h5>System extracts frames and landmarks using computer vision.</h5></div>
           </div>
           <div class="methodology-step reveal">
             <span class="step-num">3</span>
-            <div><h5>Temporal alignment</h5><p>Frames are length-normalised into a fixed window (45 for Bi-LSTM, 32 for Bi-GRU). Missing detections fall back to the last valid frame to avoid zero spikes.</p></div>
+            <div><h5>Preprocessed data is sent to the trained model.</h5></div>
           </div>
           <div class="methodology-step reveal">
             <span class="step-num">4</span>
-            <div><h5>Scaling &amp; projection</h5><p>A StandardScaler fitted on training data transforms features to zero mean and unit variance; a 256-component PCA concentrates variance and dampens sensor noise.</p></div>
+            <div><h5>Model predicts the Tamil sign/gloss.</h5></div>
           </div>
           <div class="methodology-step reveal">
             <span class="step-num">5</span>
-            <div><h5>Model processes the sequence</h5><p>A 3-layer bidirectional LSTM (64-128-64) is the primary classifier; a 3-layer Bi-GRU acts as a lighter parallel baseline. Both use dropout and recurrent dropout.</p></div>
-          </div>
-          <div class="methodology-step reveal">
-            <span class="step-num">6</span>
-            <div><h5>System outputs text</h5><p>The softmax layer emits a gloss label and confidence score. Optional SHAP attribution highlights which landmarks drove the prediction.</p></div>
+            <div><h5>Result is displayed to the user in real time.</h5></div>
           </div>
         </div>
       </div>
@@ -311,5 +327,40 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
+  
+  <script>
+    function showContent(section) {
+      // Hide all content sections
+      const allSections = document.querySelectorAll('.content-section');
+      allSections.forEach(sec => sec.style.display = 'none');
+      
+      // Show selected content section
+      const selectedSection = document.getElementById(section + '-content');
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+      
+      // Reset all button styles
+      const allButtons = document.querySelectorAll('.d-flex button');
+      allButtons.forEach(btn => {
+        btn.classList.remove('btn-primary');
+        btn.classList.add('btn-outline-secondary');
+      });
+      
+      // Highlight selected button
+      const buttonMap = {
+        'background': 0,
+        'research-gap': 1,
+        'research-problem': 2,
+        'research-objectives': 3
+      };
+      
+      const selectedButtonIndex = buttonMap[section];
+      if (selectedButtonIndex !== undefined) {
+        allButtons[selectedButtonIndex].classList.remove('btn-outline-secondary');
+        allButtons[selectedButtonIndex].classList.add('btn-primary');
+      }
+    }
+  </script>
 </body>
 </html>
