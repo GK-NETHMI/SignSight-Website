@@ -60,7 +60,7 @@ Double-click `start-server.bat`.
 ### Option 2 (manual server, any OS)
 
 ```zsh
-cd "/Users/farsithfawzer/Desktop/Farsith AudioToSign/Website/SignSight-Website"
+cd "/Users/../../SignSight-Website" # (adjust path as needed)
 python3 -m http.server 5500
 ```
 
