@@ -28,103 +28,77 @@
   <!-- Background -->
   <section>
     <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-12 reveal">
-          <span class="section-tag">01 · Background</span>
-          <h2 class="section-title">Research Domain</h2>
-          
-          <!-- Navigation Buttons -->
-          <div class="d-flex flex-wrap gap-2 mb-4">
-            <button class="btn btn-primary rounded-pill px-4 py-2" onclick="showContent('background')">Background</button>
-            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-gap')">Research Gap</button>
-            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-problem')">Research Problem</button>
-            <button class="btn btn-outline-secondary rounded-pill px-4 py-2" onclick="showContent('research-objectives')">Research Objectives</button>
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">01 · Background & Research Gap</span>
+        <h2 class="section-title">Research Domain</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 reveal">
+          <div class="info-card h-100">
+            <h3>Research Background</h3>
+            <p>Tamil Sign Language is an important communication method for hearing-impaired people in Sri Lanka. Existing manual interpretation and static sign recognition systems are limited, so a real-time video-based recognition system is needed.</p>
           </div>
-          <div id="content-area" class="info-card h-100">
-            <!-- Background Content -->
-            <div id="background-content" class="content-section">
-              <h4>Research Background</h4>
-              <p>Tamil Sign Language is an important communication method for hearing-impaired people in Sri Lanka. Existing manual interpretation and static sign recognition systems are limited, so a real-time video-based recognition system is needed.</p>
-            </div>
-            
-            <!-- Research Gap Content -->
-            <div id="research-gap-content" class="content-section" style="display: none;">
-              <h4>Research Gap</h4>
-              <p>Most existing studies focus on static signs, controlled environments, or other sign languages like ASL and ISL. Very few works handle dynamic Tamil Sign Language using real-time webcam/video input with lightweight models.</p>
-            </div>
-            
-            <!-- Research Problem Content -->
-            <div id="research-problem-content" class="content-section" style="display: none;">
-              <h4>Research Problem</h4>
-              <p>There is no accurate and low-cost system that can recognize dynamic Tamil Sign Language signs in real time using normal video input and standard devices.</p>
-            </div>
-            
-            <!-- Research Objectives Content -->
-            <div id="research-objectives-content" class="content-section" style="display: none;">
-              <h4>Research Objectives</h4>
-              <ul>
-                <li>To develop a real-time Tamil Sign Language recognition system.</li>
-                <li>To process video input using computer vision techniques.</li>
-                <li>To classify sign gestures using deep learning models.</li>
-                <li>To compare different models and find the best one for the dataset.</li>
-                <li>To make the system easy to use and accessible for hearing-impaired users.</li>
-              </ul>
-            </div>
+        </div>
+        <div class="col-lg-6 reveal">
+          <div class="info-card h-100">
+            <h3>Research Gap & Limitations</h3>
+            <p>Most existing studies focus on static signs, controlled environments, or other sign languages like ASL and ISL. Very few works handle dynamic Tamil Sign Language using real-time webcam/video input with lightweight models for accessibility.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Research Gap -->
+  <!-- Research Gaps in Detail -->
   <section class="bg-soft">
     <div class="container">
       <div class="text-center mb-5 reveal">
-        <span class="section-tag">02 · Research Gap</span>
-        <h2 class="section-title">Limitations of existing systems</h2>
-        <p class="section-subtitle">Most published work targets ASL or ISL under controlled conditions. Tamil Sign Language, dynamic transitions, and consumer-grade deployment are consistently underserved.</p>
+        <span class="section-tag">02 · System Limitations</span>
+        <h2 class="section-title">Existing challenges</h2>
+        <p class="section-subtitle">Tamil Sign Language support systems face critical gaps that limit accessibility, accuracy, and real-world deployment for hearing-impaired communities.</p>
       </div>
       <div class="row g-4">
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 01</span>
-            <h3>Static over dynamic</h3>
-            <p>Many systems classify isolated hand poses and ignore the fluid transitional movements that are central to real TSL communication.</p>
+            <h3>Limited TSL resources</h3>
+            <p>Existing sign language datasets are dominated by ASL and BSL, leaving Tamil Sign Language with little to no annotated corpora for training reliable models.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 02</span>
-            <h3>Lab-only conditions</h3>
-            <p>Fixed lighting, stable backgrounds, and uniform signers limit real-world generalisation in homes, classrooms, and public spaces.</p>
+            <h3>No multimedia conversion</h3>
+            <p>Current tools lack the ability to convert spoken Tamil audio or video content into TSL, cutting off hearing-impaired users from everyday media and education.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 03</span>
             <h3>Hardware dependency</h3>
-            <p>Glove sensors, depth cameras, and multi-camera rigs raise cost and block adoption in low-resource contexts.</p>
+            <p>Many gesture recognition systems rely on depth cameras, glove sensors, or multi-camera rigs - raising cost and blocking adoption in low-resource environments.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 04</span>
-            <h3>Opaque predictions</h3>
-            <p>Deep CNNs often behave as "black boxes", eroding user trust and making debugging difficult for educators and engineers.</p>
+            <h3>Static over dynamic signs</h3>
+            <p>Most systems classify isolated hand poses and ignore the fluid, transitional movements that are central to real TSL communication sequences.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 05</span>
-            <h3>No TSL-specific corpora</h3>
-            <p>ASL and BSL benchmarks dominate the literature, leaving Tamil Sign Language with limited annotated datasets.</p>
+            <h3>No learning platform</h3>
+            <p>There is no dedicated interactive platform for learning TSL with structured evaluation, progress tracking, or mentor oversight tailored to Tamil speakers.</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 reveal">
           <div class="info-card">
             <span class="num">GAP 06</span>
-            <h3>Train-serve mismatch</h3>
-            <p>Preprocessing rules in notebooks rarely match what runs in production, creating silent drops in deployment accuracy.</p>
+            <h3>Opaque model predictions</h3>
+            <p>Deep learning models used in sign detection often act as black boxes, eroding trust among educators and making it difficult to diagnose or improve accuracy.</p>
           </div>
         </div>
       </div>
@@ -134,24 +108,30 @@
   <!-- Research Problem -->
   <section>
     <div class="container">
+      <div class="text-center mb-5 reveal">
+        <span class="section-tag">03 · Research Problem</span>
+        <h2 class="section-title">Communication barriers</h2>
+        <p class="section-subtitle">Hearing-impaired communities depend on accessible technology—yet affordable, real-time recognition remains scarce.</p>
+      </div>
+
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal">
-          <span class="section-tag">03 · Research Problem</span>
-          <h2 class="section-title">Communication barriers in the hearing-impaired community</h2>
-          <p>Approximately 300,000 individuals in Sri Lanka rely on Tamil Sign Language as their primary means of communication. Yet assistive technology that interprets signing from ordinary cameras remains scarce, fragmented, or priced out of reach.</p>
-          <p>The lack of standardised lexicons, the subtle fluidity of transitional movements, and the diversity of signing environments make robust recognition a genuinely hard problem — one that must be solved transparently and affordably to matter at community scale.</p>
-          <p><strong>The core question:</strong> Can a computer-vision pipeline built on consumer webcams and open-source libraries reliably recognise dynamic TSL gestures in real time, with enough clarity for educators, caregivers, and signers to trust and adopt it?</p>
+          <div class="info-card h-100">
+            <h3>The Core Challenge</h3>
+            <p>Approximately 300,000 individuals in Sri Lanka rely on Tamil Sign Language as their primary means of communication. Yet assistive technology that interprets signing from ordinary cameras remains scarce, fragmented, or priced out of reach.</p>
+            <p>The lack of standardised lexicons, the subtle fluidity of transitional movements, and the diversity of signing environments make robust recognition a genuinely hard problem — one that must be solved transparently and affordably to matter at community scale.</p>
+          </div>
         </div>
         <div class="col-lg-6 reveal">
-          <div class="info-card">
-            <span class="num">GUIDING QUESTIONS</span>
-            <h3>Five research questions</h3>
-            <ul>
-              <li>Can holistic landmark vectors alone discriminate between 15 TSL glosses without appearance-based CNNs?</li>
-              <li>Does a fixed-length window with transparent resampling keep training and live inference comparable?</li>
-              <li>Can the entire stack run on hardware students and small labs already own?</li>
-              <li>How much does a Bi-GRU baseline trade off against a deeper Bi-LSTM for this problem size?</li>
-              <li>How can explainable AI (e.g. SHAP) increase user trust in the output?</li>
+          <div class="info-card h-100" style="background: var(--gradient-primary); color:#fff; border:none;">
+            <span class="num" style="color:#a5f3fc">CORE QUESTION</span>
+            <h3 style="color:#fff">Five research questions</h3>
+            <ul style="color:rgba(255,255,255,0.9);">
+              <li>Can holistic landmarks alone discriminate between 15 TSL glosses?</li>
+              <li>Does a fixed-length window keep training and live inference comparable?</li>
+              <li>Can the entire stack run on consumer hardware?</li>
+              <li>How much does Bi-GRU trade off against Bi-LSTM?</li>
+              <li>How can explainable AI increase user trust?</li>
             </ul>
           </div>
         </div>
@@ -164,44 +144,46 @@
     <div class="container">
       <div class="text-center mb-5 reveal">
         <span class="section-tag">04 · Research Objectives</span>
-        <h2 class="section-title">What this project set out to achieve</h2>
+        <h2 class="section-title">What this project achieves</h2>
+        <p class="section-subtitle">A deployable, transparent, and affordable pipeline for dynamic Tamil Sign Language recognition.</p>
       </div>
+
       <div class="row g-4">
-        <div class="col-lg-5 reveal">
+        <div class="col-lg-6 reveal">
           <div class="info-card h-100" style="background: var(--gradient-primary); color:#fff; border:none;">
-            <span class="num" style="color:#a5f3fc">MAIN OBJECTIVE</span>
-            <h3 style="color:#fff">Develop a real-time dynamic sign language recognition system</h3>
-            <p style="color:rgba(255,255,255,0.9)">A deployable, transparent, and affordable pipeline that converts dynamic TSL gestures into text with enough accuracy to be useful in schools, homes, and community centres.</p>
+            <span class="num" style="color:#a5f3fc">PRIMARY OBJECTIVE</span>
+            <h3 style="color:#fff">Real-time TSL Recognition</h3>
+            <p style="color:rgba(255,255,255,0.9);">Deploy a transparent system that converts dynamic TSL gestures into text with sufficient accuracy for schools, homes, and community centres.</p>
           </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-6">
           <div class="row g-3">
-            <div class="col-md-6 reveal">
+            <div class="col-6 reveal">
               <div class="info-card h-100">
-                <span class="num">SUB-01</span>
-                <h3>Improve gesture accuracy</h3>
-                <p>Use holistic landmarks, standardisation, and PCA to raise recognition accuracy above practical deployment thresholds.</p>
+                <span class="num">OBJ-01</span>
+                <h4>Gesture Accuracy</h4>
+                <p>Use holistic landmarks and PCA to exceed practical deployment thresholds.</p>
               </div>
             </div>
-            <div class="col-md-6 reveal">
+            <div class="col-6 reveal">
               <div class="info-card h-100">
-                <span class="num">SUB-02</span>
-                <h3>Reduce recognition delay</h3>
-                <p>Keep end-to-end latency low enough for live conversation on a mid-range laptop without a GPU.</p>
+                <span class="num">OBJ-02</span>
+                <h4>Low Latency</h4>
+                <p>Keep inference fast on consumer laptops without GPUs for real-time conversation.</p>
               </div>
             </div>
-            <div class="col-md-6 reveal">
+            <div class="col-6 reveal">
               <div class="info-card h-100">
-                <span class="num">SUB-03</span>
-                <h3>Support continuous detection</h3>
-                <p>Design the sliding-window buffer so that isolated-gloss models extend naturally toward continuous recognition.</p>
+                <span class="num">OBJ-03</span>
+                <h4>Continuous Detection</h4>
+                <p>Design sliding buffers for natural progression to continuous recognition.</p>
               </div>
             </div>
-            <div class="col-md-6 reveal">
+            <div class="col-6 reveal">
               <div class="info-card h-100">
-                <span class="num">SUB-04</span>
-                <h3>Keep the pipeline explainable</h3>
-                <p>Surface a 0–100 confidence score and feature attributions so that users understand why the system predicts what it does.</p>
+                <span class="num">OBJ-04</span>
+                <h4>Explainability</h4>
+                <p>Surface confidence scores and feature attributions for user trust.</p>
               </div>
             </div>
           </div>
@@ -215,29 +197,79 @@
     <div class="container">
       <div class="text-center mb-5 reveal">
         <span class="section-tag">05 · System Workflow</span>
-        <h2 class="section-title">System Workflow</h2>
+        <h2 class="section-title">Recognition pipeline</h2>
+        <p class="section-subtitle">From video input to real-time Tamil Sign Language predictions.</p>
       </div>
       <div class="row g-4">
-        <div class="col-lg-8 mx-auto">
+        <div class="col-lg-10 mx-auto">
           <div class="methodology-step reveal">
             <span class="step-num">1</span>
-            <div><h5>User uploads a sign video or opens webcam.</h5></div>
+            <div>
+              <span class="workflow-kicker">Input</span>
+              <h5>Video input</h5>
+              <p>User uploads a pre-recorded sign video or opens the webcam for live gesture capture. Both modes feed into the same processing pipeline.</p>
+              <div class="workflow-tags">
+                <span class="workflow-tag">Webcam</span>
+                <span class="workflow-tag">Video upload</span>
+                <span class="workflow-tag">React UI</span>
+              </div>
+            </div>
           </div>
+
           <div class="methodology-step reveal">
             <span class="step-num">2</span>
-            <div><h5>System extracts frames and landmarks using computer vision.</h5></div>
+            <div>
+              <span class="workflow-kicker">Extraction</span>
+              <h5>Landmark extraction</h5>
+              <p>MediaPipe Holistic processes each frame to extract 33 pose, 468 face, and 42 hand landmarks - no depth sensors or gloves required.</p>
+              <div class="workflow-tags">
+                <span class="workflow-tag">MediaPipe Holistic</span>
+                <span class="workflow-tag">OpenCV</span>
+              </div>
+            </div>
           </div>
+
           <div class="methodology-step reveal">
             <span class="step-num">3</span>
-            <div><h5>Preprocessed data is sent to the trained model.</h5></div>
+            <div>
+              <span class="workflow-kicker">Preprocessing</span>
+              <h5>Normalise and reduce</h5>
+              <p>Raw landmark data is normalised, standardised, and dimensionality-reduced using PCA. Scaler and PCA rules are serialised and shared between training and inference to ensure consistency.</p>
+              <div class="workflow-tags">
+                <span class="workflow-tag">PCA</span>
+                <span class="workflow-tag">NumPy</span>
+                <span class="workflow-tag">Scikit-learn</span>
+              </div>
+            </div>
           </div>
+
           <div class="methodology-step reveal">
             <span class="step-num">4</span>
-            <div><h5>Model predicts the Tamil sign/gloss.</h5></div>
+            <div>
+              <span class="workflow-kicker">Prediction</span>
+              <h5>Model classification</h5>
+              <p>The preprocessed sequence is passed to a Bi-LSTM or Bi-GRU model which classifies the sign gesture across a 45-frame temporal window and returns a prediction with a confidence score.</p>
+              <div class="workflow-tags">
+                <span class="workflow-tag">Bi-LSTM</span>
+                <span class="workflow-tag">Bi-GRU</span>
+                <span class="workflow-tag">TensorFlow / Keras</span>
+                <span class="workflow-tag">Flask API</span>
+              </div>
+            </div>
           </div>
+
           <div class="methodology-step reveal">
             <span class="step-num">5</span>
-            <div><h5>Result is displayed to the user in real time.</h5></div>
+            <div>
+              <span class="workflow-kicker">Output</span>
+              <h5>Output and explainability</h5>
+              <p>The predicted TSL gloss, a 0-100 recognition confidence score, and SHAP-based feature importance attribution are displayed to the user for transparency and trust.</p>
+              <div class="workflow-tags">
+                <span class="workflow-tag">SHAP</span>
+                <span class="workflow-tag">Confidence scoring</span>
+                <span class="workflow-tag">React UI</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -248,23 +280,21 @@
   <section class="bg-soft">
     <div class="container">
       <div class="text-center mb-5 reveal">
-        <span class="section-tag">06 · Technologies Used</span>
-        <h2 class="section-title">The tools behind the build</h2>
-        <p class="section-subtitle">Open-source libraries chosen for reproducibility, community support, and low deployment cost.</p>
+        <span class="section-tag">06 · Technology Stack</span>
+        <h2 class="section-title">Open-source tools</h2>
+        <p class="section-subtitle">Reproducible, community-supported, and deployed on consumer hardware.</p>
       </div>
       <div class="tech-grid reveal">
         <div class="tech-chip"><i class="bi bi-filetype-py"></i><span>Python 3.x</span><small>Core language</small></div>
-        <div class="tech-chip"><i class="bi bi-cpu"></i><span>TensorFlow / Keras</span><small>Deep learning</small></div>
-        <div class="tech-chip"><i class="bi bi-diagram-2"></i><span>Bi-LSTM</span><small>Primary classifier</small></div>
-        <div class="tech-chip"><i class="bi bi-hdd-network"></i><span>Bi-GRU</span><small>Baseline</small></div>
+        <div class="tech-chip"><i class="bi bi-cpu"></i><span>TensorFlow</span><small>Deep learning</small></div>
+        <div class="tech-chip"><i class="bi bi-diagram-2"></i><span>Bi-LSTM</span><small>Primary model</small></div>
+        <div class="tech-chip"><i class="bi bi-hdd-network"></i><span>Bi-GRU</span><small>Lightweight</small></div>
         <div class="tech-chip"><i class="bi bi-camera-reels"></i><span>OpenCV</span><small>Video pipeline</small></div>
-        <div class="tech-chip"><i class="bi bi-palette"></i><span>MediaPipe Holistic</span><small>Landmarks</small></div>
-        <div class="tech-chip"><i class="bi bi-braces"></i><span>scikit-learn</span><small>Scaler + PCA</small></div>
-        <div class="tech-chip"><i class="bi bi-bar-chart"></i><span>NumPy / Pandas</span><small>Data handling</small></div>
-        <div class="tech-chip"><i class="bi bi-filetype-html"></i><span>HTML / CSS / JS</span><small>Web client</small></div>
-        <div class="tech-chip"><i class="bi bi-bootstrap"></i><span>Bootstrap 5</span><small>Responsive UI</small></div>
-        <div class="tech-chip"><i class="bi bi-box"></i><span>Docker</span><small>Deployment</small></div>
-        <div class="tech-chip"><i class="bi bi-github"></i><span>Git / GitHub</span><small>Version control</small></div>
+        <div class="tech-chip"><i class="bi bi-palette"></i><span>MediaPipe</span><small>Landmarks</small></div>
+        <div class="tech-chip"><i class="bi bi-braces"></i><span>scikit-learn</span><small>PCA + Scaler</small></div>
+        <div class="tech-chip"><i class="bi bi-bar-chart"></i><span>NumPy</span><small>Data handling</small></div>
+        <div class="tech-chip"><i class="bi bi-filetype-html"></i><span>HTML/CSS/JS</span><small>Web client</small></div>
+        <div class="tech-chip"><i class="bi bi-bootstrap"></i><span>Bootstrap 5</span><small>UI framework</small></div>
       </div>
     </div>
   </section>
@@ -276,40 +306,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
-  
-  <script>
-    function showContent(section) {
-      // Hide all content sections
-      const allSections = document.querySelectorAll('.content-section');
-      allSections.forEach(sec => sec.style.display = 'none');
-      
-      // Show selected content section
-      const selectedSection = document.getElementById(section + '-content');
-      if (selectedSection) {
-        selectedSection.style.display = 'block';
-      }
-      
-      // Reset all button styles
-      const allButtons = document.querySelectorAll('.d-flex button');
-      allButtons.forEach(btn => {
-        btn.classList.remove('btn-primary');
-        btn.classList.add('btn-outline-secondary');
-      });
-      
-      // Highlight selected button
-      const buttonMap = {
-        'background': 0,
-        'research-gap': 1,
-        'research-problem': 2,
-        'research-objectives': 3
-      };
-      
-      const selectedButtonIndex = buttonMap[section];
-      if (selectedButtonIndex !== undefined) {
-        allButtons[selectedButtonIndex].classList.remove('btn-outline-secondary');
-        allButtons[selectedButtonIndex].classList.add('btn-primary');
-      }
-    }
-  </script>
 </body>
 </html>
