@@ -1,71 +1,107 @@
 # SignSight — Academic Research Project Website
 
-Modern, responsive static website for the final-year research project
-**Dynamic Sign Language Recognition Using Computer Vision** by
-**Jeran Mark (Mark J J)** at SLIIT (Project 25-26J-404).
+Responsive static website for the final-year research project
+**Dynamic Sign Language Recognition Using Computer Vision**
+(SLIIT Project ID: **25-26J-404**).
 
-## Tech stack
+## Tech Stack
 
 - HTML5, CSS3, Vanilla JavaScript
-- Bootstrap 5.3 (via CDN)
-- Bootstrap Icons 1.11 (via CDN)
-- Google Fonts — Inter + Poppins
+- Bootstrap 5.3 (CDN)
+- Bootstrap Icons 1.11 (CDN)
+- Google Fonts: Inter + Poppins
 
-No build step. No backend. Just open the files in a browser or serve the
-folder with any static file server.
+No build step and no backend.
 
-## File structure
+## Project Structure
 
 ```
-project-website/
-├── index.html          Home (hero, overview, features, tech, highlights)
-├── domain.html         Literature, gap, problem, objectives, methodology, tech
-├── milestones.html     Timeline of 5 project milestones with marks
-├── documents.html      Downloadable project documents
-├── presentations.html  Slide deck cards
-├── about.html          Researcher + supervision team
-├── contact.html        Contact form + map + info
+SignSight-Website/
+├── index.html
+├── domain.html
+├── milestones.html
+├── documents.html
+├── presentations.html
+├── about.html
+├── contact.html
+├── components/
+│   ├── navbar.html
+│   └── footer.html
 ├── css/
-│   └── style.css       Single shared stylesheet (theme, layout, responsive)
+│   └── style.css
 ├── js/
-│   └── script.js       Navbar, reveal animations, counters, form
-├── images/             (reserved for future assets)
-└── assets/             Place PDFs & slide decks here (filenames below)
+│   └── script.js
+├── assets/
+│   ├── logo.png
+│   ├── ieee-research-paper.pdf
+│   ├── IT22328120_Thesis Draft.pdf
+│   ├── PP2 Presentation.pdf
+│   ├── Proposal_Report_25-IT22328120 .pdf
+│   ├── Proposal_Report_25-IT22328120  (1).pdf
+│   ├── proposal-IT22328120.pdf
+│   ├── proposal.pptx
+│   └── TAF-25-26J-404.pdf
+└── README.md
 ```
 
-## Expected asset files
+## Important Note About Running
 
-Drop these files into `assets/` to make every download / view-slides button work:
+This project loads `components/navbar.html` and `components/footer.html`
+via JavaScript (`fetch` / `XMLHttpRequest`).
 
+Use a local server for full behavior (recommended), not just `file://`.
+
+## Run Locally
+
+### Option 1 (Windows helper)
+
+Double-click `start-server.bat`.
+
+### Option 2 (manual server, any OS)
+
+```zsh
+cd "/Users/farsithfawzer/Desktop/Farsith AudioToSign/Website/SignSight-Website"
+python3 -m http.server 5500
+```
+
+Then open:
+
+- <http://localhost:5500/index.html>
+
+## Assets Referenced by Pages
+
+The pages currently reference the following filenames in `assets/`:
+
+- `TAF-25-26J-404.pdf`
 - `project-charter.pdf`
-- `proposal-report.pdf`
+- `Proposal_Report_25-IT22328120 .pdf`
+- `proposal-member-02.pdf`
+- `proposal-member-03.pdf`
+- `proposal-member-04.pdf`
 - `status-1.pdf`
 - `status-2.pdf`
+- `IT22328120_Thesis Draft.pdf`
+- `final-member-02.pdf`
+- `final-member-03.pdf`
+- `final-member-04.pdf`
+- `final-group-report.pdf`
 - `ieee-research-paper.pdf`
-- `final-report.pdf`
-- `checklist.pdf`
-- `research-poster.pdf`
 - `proposal-slides.pdf`
 - `progress-1-slides.pdf`
-- `progress-2-slides.pdf`
+- `PP2 Presentation.pdf`
 - `final-slides.pdf`
+- `proposal.pptx`
 
-## Running locally
+If a linked file is missing, either:
 
-**Recommended** — double-click `start-server.bat`. It opens the site in your
-default browser at <http://localhost:5500> with fully working download
-buttons. Requires Python (or Node.js) on your PC. Close the black window
-to stop the server.
+1. Add the file with the exact referenced name to `assets/`, or
+2. Update the corresponding link in `documents.html` / `presentations.html`.
 
-**Alternative** — double-click `index.html`. The site still opens, but PDF
-"Download" buttons may open the file in-browser instead of downloading.
-Workaround: **right-click** any Download button → **Save link as…**.
+## Customization Guide
 
-## Customising
-
-- **Theme colours**: edit the CSS variables at the top of `css/style.css`
-  (`--primary`, `--secondary`, `--gradient-primary`, etc.).
-- **Supervisor name**: replace the "Dr. Prasanna Sumathipala" entry on
-  `about.html` if the official supervisor differs.
-- **Dates / marks on milestones**: update `milestones.html`.
-- **Contact details**: update `contact.html` and all footers.
+- **Theme colors**: update `:root` variables in `css/style.css`.
+- **Footer / navbar content**: edit `components/footer.html` and `components/navbar.html`.
+- **Milestone timeline**: edit `milestones.html`.
+- **Document links**: edit `documents.html`.
+- **Presentation links**: edit `presentations.html`.
+- **Contact details**: edit `contact.html` and `components/footer.html`.
