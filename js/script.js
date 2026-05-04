@@ -151,22 +151,66 @@
   }
 
   // ----------------------------------------------------------
-  // Contact form (no backend — front-end feedback only)
+  // Contact form with backend email support
   // ----------------------------------------------------------
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
   if (form && status) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.classList.add('was-validated');
         return;
       }
-      status.textContent = 'Thank you! Your message has been received. We will reply shortly.';
-      status.classList.add('show');
-      form.reset();
-      form.classList.remove('was-validated');
-      setTimeout(() => status.classList.remove('show'), 5000);
+
+      // Show loading state
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split me-2"></i>Sending...';
+
+      try {
+        // Collect form data
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value,
+        };
+
+        // Send to backend
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          // Success
+          status.innerHTML = '<i class="bi bi-check-circle-fill me-2"></i><span>' + result.message + '</span>';
+          status.classList.add('show', 'success');
+          status.classList.remove('error');
+          form.reset();
+          form.classList.remove('was-validated');
+          setTimeout(() => status.classList.remove('show'), 5000);
+        } else {
+          // Backend error
+          throw new Error(result.error || 'Unknown error');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        status.innerHTML = '<i class="bi bi-exclamation-circle-fill me-2"></i><span>' + (error.message || 'Failed to send message. Please try again.') + '</span>';
+        status.classList.add('show', 'error');
+        status.classList.remove('success');
+      } finally {
+        // Restore button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
     });
   }
 
