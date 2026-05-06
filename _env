@@ -1,0 +1,11 @@
+# Email Configuration
+# Generated app password from Google Account
+
+EMAIL_SERVICE=gmail
+EMAIL_USER=signsight8@gmail.com
+EMAIL_PASS=hcus yxta nfbg rvjy
+EMAIL_FROM=signsight8@gmail.com
+EMAIL_TO=signsight8@gmail.com
+
+# Server
+PORT=3000
